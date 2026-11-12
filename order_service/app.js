@@ -45,7 +45,7 @@ app.post('/purchase/:id', async (req, res) => {
     // Catalog must reject this request when quantity is zero.
     try {
       await axios.put(`${CATALOG_URL}/update/${id}`, {
-        decrement: 1
+        delta: -1
       });
     } catch (updateErr) {
       return res.status(updateErr.response?.status || 502).json(
