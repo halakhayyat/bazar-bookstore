@@ -1,0 +1,110 @@
+=== Bazar Bookstore - Lab 1 Execution Output ===
+
+=== 1. Search Books ===
+{
+    "value":  [
+                  {
+                      "id":  1,
+                      "title":  "How to get a good grade in DOS in 40 minutes a day."
+                  },
+                  {
+                      "id":  2,
+                      "title":  "RPCs for Noobs."
+                  }
+              ],
+    "Count":  2
+}
+
+=== 2. Book Information Before Purchase ===
+{
+    "title":  "How to get a good grade in DOS in 40 minutes a day.",
+    "quantity":  4,
+    "price":  60
+}
+=== 3. Purchase Book ===
+{
+    
+    "message":  "Bought book: How to get a good grade in DOS in 40 minutes a day.",
+    "order_id":  2,
+    "item_id":  1,
+    "time":  "Nov 12, 2026, 10:45:21 PM"
+}
+
+=== 4. Book Information After Purchase ===
+{
+    "title":  "How to get a good grade in DOS in 40 minutes a day.",
+    "quantity":  3,
+    "price":  60
+}
+
+=== 5. Docker Service Logs ===
+catalog-1   | }
+order-1     | Order service running on port 5002
+order-1     | Connected to orders database.
+order-1     | Purchase request received for item 1
+order-1     | bought book How to get a good grade in DOS in 40 minutes a day.
+order-1     | Purchase error: Request failed with status code 404
+order-1     | Order service running on port 5002
+order-1     | Connected to orders database.
+catalog-1   | Catalog service running on port 5001
+order-1     | Purchase request received for item 1
+order-1     | bought book How to get a good grade in DOS in 40 minutes a day.
+catalog-1   | Connected to catalog database.
+frontend-1  |   quantity: 4,
+catalog-1   | INFO item=1 {
+catalog-1   |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+catalog-1   |   quantity: 4,
+catalog-1   |   price: 60
+catalog-1   | }
+catalog-1   | SEARCH topic="distributed systems" results=2
+frontend-1  |   price: 60
+frontend-1  | }
+catalog-1   | INFO item=1 {
+catalog-1   |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+catalog-1   |   quantity: 4,
+frontend-1  | Search for topic: distributed systems
+catalog-1   |   price: 60
+frontend-1  | [
+frontend-1  |   {
+frontend-1  |     id: 1,
+frontend-1  |     title: 'How to get a good grade in DOS in 40 minutes a day.'
+catalog-1   | }
+frontend-1  |   },
+frontend-1  |   { id: 2, title: 'RPCs for Noobs.' }
+frontend-1  | ]
+frontend-1  | Info request for item: 1
+catalog-1   | INFO item=1 {
+catalog-1   |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+frontend-1  | {
+catalog-1   |   quantity: 4,
+frontend-1  |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+frontend-1  |   quantity: 4,
+frontend-1  |   price: 60
+frontend-1  | }
+frontend-1  | Purchase request for item: 1
+frontend-1  | {
+frontend-1  |   message: 'Bought book: How to get a good grade in DOS in 40 minutes a day.',
+frontend-1  |   order_id: 2,
+frontend-1  |   item_id: 1,
+frontend-1  |   time: 'Nov 12, 2026, 10:45:21 PM'
+frontend-1  | }
+frontend-1  | Info request for item: 1
+frontend-1  | {
+frontend-1  |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+catalog-1   |   price: 60
+catalog-1   | }
+frontend-1  |   quantity: 3,
+frontend-1  |   price: 60
+frontend-1  | }
+catalog-1   | UPDATE item=1 {
+catalog-1   |   id: 1,
+catalog-1   |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+catalog-1   |   price: 60,
+catalog-1   |   quantity: 3
+catalog-1   | }
+catalog-1   | INFO item=1 {
+catalog-1   |   title: 'How to get a good grade in DOS in 40 minutes a day.',
+catalog-1   |   quantity: 3,
+catalog-1   |   price: 60
+catalog-1   | }
+
