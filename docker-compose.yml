@@ -1,0 +1,15 @@
+
+services:
+  catalog:
+    build:
+      context: ./catalog_service
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: "5001"
+      DB_PATH: /data/catalog.db
+    volumes:
+      - catalog-data:/data
+
+volumes:
+  catalog-data:
